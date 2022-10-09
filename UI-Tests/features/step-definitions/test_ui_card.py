@@ -1,59 +1,24 @@
-from pytest_bdd import given, when, then
-import requests
-
-
-url = "https://api.trello.com/1/cards/{id}/idLabels"
-
-query = {
-   'key': 'APIKey',
-   'token': 'APIToken'
-}
-
-response = requests.request(
-   "POST",
-   url,
-   params=query
-)
+from pytest_bdd import scenario, given, when, then
 
 
 @given("the user is on a board with at least one list")
-def test_one():
-    print(response.text)
-
-
-@when("a card is created")
 def step_impl():
-    raise NotImplementedError(u'STEP: When a card is created')
+    raise NotImplementedError(u'STEP: Given the user is on a board with at least one list')
 
 
-@then("the card is shown on the list")
+@when("the user clicks 'Add card'")
 def step_impl():
-    raise NotImplementedError(u'STEP: Then the card is shown on the list')
+    raise NotImplementedError(u'STEP: When the user clicks \'Add card\'')
 
 
-@given("there are no lists on the board")
+@given("the user enters 'myCard'")
 def step_impl():
-    raise NotImplementedError(u'STEP: Given there are no lists on the board')
+    raise NotImplementedError(u'STEP: And the user enters \'myCard\'')
 
 
-@then("an error is shown")
+@then("the card is created")
 def step_impl():
-    raise NotImplementedError(u'STEP: Then an error is shown')
-
-
-@given("the trello website is opened")
-def step_impl():
-    raise NotImplementedError(u'STEP: Given the trello website is opened')
-
-
-@when("the user is not logged in")
-def step_impl():
-    raise NotImplementedError(u'STEP: When the user is not logged in')
-
-
-@then("the user cannot create a card")
-def step_impl():
-    raise NotImplementedError(u'STEP: Then the user cannot create a card')
+    raise NotImplementedError(u'STEP: Then the card is created')
 
 
 @when("the user selects a card")
@@ -61,9 +26,9 @@ def step_impl():
     raise NotImplementedError(u'STEP: When the user selects a card')
 
 
-@given("the edits the card title to 'test edit'")
+@given("the edits the card title to 'editCard'")
 def step_impl():
-    raise NotImplementedError(u'STEP: And the edits the card title to \'test edit\'')
+    raise NotImplementedError(u'STEP: And the edits the card title to \'editCard\'')
 
 
 @then("the card title is updated")
@@ -71,9 +36,14 @@ def step_impl():
     raise NotImplementedError(u'STEP: Then the card title is updated')
 
 
-@given("the user adds a label")
+@given("the user clicks the 'Labels'")
 def step_impl():
-    raise NotImplementedError(u'STEP: And the user adds a label')
+    raise NotImplementedError(u'STEP: And the user clicks the \'Labels\'')
+
+
+@given("the user selects the first label")
+def step_impl():
+    raise NotImplementedError(u'STEP: And the user selects the first label')
 
 
 @then("the card is updated with the label")
@@ -96,6 +66,16 @@ def step_impl():
     raise NotImplementedError(u'STEP: Then the card is displayed')
 
 
+@given("clicks 'Archive'")
+def step_impl():
+    raise NotImplementedError(u'STEP: And clicks \'Archive\'')
+
+
+@then("the card is archived")
+def step_impl():
+    raise NotImplementedError(u'STEP: Then the card is archived')
+
+
 @given("user is opened a card")
 def step_impl():
     raise NotImplementedError(u'STEP: Given user is opened a card')
@@ -114,13 +94,3 @@ def step_impl():
 @then("the card is deleted")
 def step_impl():
     raise NotImplementedError(u'STEP: Then the card is deleted')
-
-
-@given("clicks 'Archive'")
-def step_impl():
-    raise NotImplementedError(u'STEP: And clicks \'Archive\'')
-
-
-@then("the card is archived")
-def step_impl():
-    raise NotImplementedError(u'STEP: Then the card is archived')

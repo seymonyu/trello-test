@@ -26,9 +26,9 @@ def step_impl():
     raise NotImplementedError(u'STEP: And the user enters a valid email <email> and the wrong password <password>')
 
 
-@given("the user enters invalid email <email> and password <password>")
+@then("error message is shown indicating wrong email/password")
 def step_impl():
-    raise NotImplementedError(u'STEP: And the user enters invalid email <email> and password <password>')
+    raise NotImplementedError(u'STEP: Then error message is shown indicating wrong email/password')
 
 
 @given("the user enters invalid email <email>")

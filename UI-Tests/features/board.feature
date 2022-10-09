@@ -23,14 +23,14 @@ Feature: Board
 
   Scenario: User can change the board name
     Given the user is on logged in on trello website
-    And the user is on board "RxAUsjbL"
+    And the user is on board "testBoard"
     When the user clicks the board title
-    And the user enters 'updateTitle'
+    And the user enters "updatedTitle"
     Then the board title is updated to 'updateTitle'
 
   Scenario: User can close a board
     Given the user is on logged in on trello website
-    And the user is on board "RxAUsjbL"
+    And the user is on board "updatedTitle"
     When the user clicks the three dots on the right of the screen
     And the user clicks more
     And the user clicks close board

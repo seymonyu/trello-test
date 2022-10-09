@@ -46,9 +46,9 @@ def step_impl():
     raise NotImplementedError(u'STEP: Then the board with title \'testBoard\' is displayed')
 
 
-@given('the user is on board "RxAUsjbL"')
+@given('the user is on board "testBoard"')
 def step_impl():
-    raise NotImplementedError(u'STEP: And the user is on board "RxAUsjbL"')
+    raise NotImplementedError(u'STEP: And the user is on board "testBoard"')
 
 
 @when("the user clicks the board title")
@@ -56,9 +56,9 @@ def step_impl():
     raise NotImplementedError(u'STEP: When the user clicks the board title')
 
 
-@given("the user enters 'updateTitle'")
+@given('the user enters "updatedTitle"')
 def step_impl():
-    raise NotImplementedError(u'STEP: And the user enters \'updateTitle\'')
+    raise NotImplementedError(u'STEP: And the user enters "updatedTitle"')
 
 
 @then("the board title is updated to 'updateTitle'")

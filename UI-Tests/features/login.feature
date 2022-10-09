@@ -14,7 +14,7 @@ Feature: Login
     When the user clicks Log in
     And the user enters a valid email <email> and the wrong password <password>
     And the user clicks Log in
-    Then the should be successfully logged into the site
+    Then error message is shown indicating wrong email/password
 
   Scenario: User cannot login the trello with invalid email address
     Given A user is on the trello website
