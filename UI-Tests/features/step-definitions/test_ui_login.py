@@ -29,3 +29,13 @@ def step_impl():
 @given("the user enters invalid email <email> and password <password>")
 def step_impl():
     raise NotImplementedError(u'STEP: And the user enters invalid email <email> and password <password>')
+
+
+@given("the user enters invalid email <email>")
+def step_impl():
+    raise NotImplementedError(u'STEP: And the user enters invalid email <email>')
+
+
+@then("the user is redirected to signup")
+def step_impl():
+    raise NotImplementedError(u'STEP: Then the user is redirected to signup')
