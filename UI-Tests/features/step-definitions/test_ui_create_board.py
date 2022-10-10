@@ -3,23 +3,19 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
-
+import os
+import utils
 
 url = "https://trello.com/"
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+driver.implicitly_wait(20)  # seconds
 
 
 @given("the user is on logged in on trello website")
 def test_login():
-    driver.implicitly_wait(10)  # seconds
     driver.get(url)
-    driver.find_element(By.PARTIAL_LINK_TEXT, 'Log in').click()
-    driver.find_element(By.ID, 'user').send_keys('seymafirat@outlook.com')
-    driver.find_element(By.ID, 'login').click()
-    driver.find_element(By.ID, 'password').send_keys('test1234')
-    driver.find_element(By.ID, 'login-submit').click()
-    driver.find_element(By.CLASS_NAME, 'boards-page-board-section-header').is_displayed()
+    utils.login(driver, os.environ.get('TRELLO_EMAIL'), os.environ.get('TRELLO_PASSWORD'))
 
 
 @when("the user clicks on 'Create'")
@@ -41,7 +37,7 @@ def test_enter_board_name():
 
 @then("a board is created")
 def test_check_board():
-    driver.find_element(By.CLASS_NAME, 'board-header-btn-text').is_displayed()
-    board_name = driver.find_element(By.CLASS_NAME, 'board-header-btn-text').get_attribute("textContent")
+    driver.find_element(By.CLASS_NAME, 'board-name-input').is_displayed()
+    board_name = driver.find_element(By.CLASS_NAME, 'board-name-input').get_attribute("aria-label")
     if board_name == 'testBoard':
         print('tests are passed!')

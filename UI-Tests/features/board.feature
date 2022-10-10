@@ -14,6 +14,13 @@ Feature: Board
     When the user is not logged in
     Then the Create board button is not available
 
+  Scenario: User cannot create boards if the maximum board number is reached
+    Given the user is on logged in on trello website
+    And the user is on a workspace with 10 boards
+    When the user clicks on 'Create'
+    And the user clicks on 'Create a board'
+    And the user enters the title 'testBoard'
+    Then error message is shown indicating the workspace reached maximum amount of boards
 
  Scenario: User can display a board
     Given the user is on logged in on trello website
