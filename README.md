@@ -18,3 +18,8 @@ Every feature and scenario is tagged according to coverage area.
 ## Test Execution
 
 The tests can be run by running the pytest command on the project root. All the standard options for [pytest command line](https://docs.pytest.org/en/7.1.x/how-to/usage.html) work for filtering etc. 
+
+
+### Disclaimer
+
+The repository is not finished and the automated tests are in progress.
