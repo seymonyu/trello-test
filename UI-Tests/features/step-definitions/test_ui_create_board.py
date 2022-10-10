@@ -17,7 +17,7 @@ def test_login():
     driver.find_element(By.PARTIAL_LINK_TEXT, 'Log in').click()
     driver.find_element(By.ID, 'user').send_keys('seymafirat@outlook.com')
     driver.find_element(By.ID, 'login').click()
-    driver.find_element(By.ID, 'password').send_keys('qvuj83tva')
+    driver.find_element(By.ID, 'password').send_keys('test1234')
     driver.find_element(By.ID, 'login-submit').click()
     driver.find_element(By.CLASS_NAME, 'boards-page-board-section-header').is_displayed()
 
