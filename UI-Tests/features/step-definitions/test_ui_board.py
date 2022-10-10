@@ -24,22 +24,24 @@ def test_login():
 
 @when("the user clicks on 'Create'")
 def test_click_create():
-    driver.find_element(By.CLASS_NAME, 'uJFM1WfH-EGEiT').click()
+    driver.find_element(By.CLASS_NAME, 'YVxoA9yoN2HeNo').click()
 
 
 @when("the user clicks on 'Create a board'")
 def test_click_create_board():
-    driver.find_element(By.CLASS_NAME, 'feplat3731').click()
+    driver.find_element(By.CLASS_NAME, 'R2Zt2qKgQJtkYY').click()
 
 
 @when("the user enters the title 'testBoard'")
 def test_enter_board_name():
-    driver.find_element(By.CLASS_NAME, 'nch-textfield__input Hj0IB7nx8rs7UO Hj0IB7nx8rs7UO ysTE7s-UXRkpYP').send_keys(
+    driver.find_element(By.CLASS_NAME, 'nch-textfield__input').send_keys(
         'testBoard')
-    driver.find_element(By.CLASS_NAME, 'G2lWjDVJsvar3H Ts+YceGnvTbKoG HPCwi137Em5EYI JIXQq8gDYY04N6').click()
+    driver.find_element(By.CLASS_NAME, 'G2lWjDVJsvar3H').click()
 
 
 @then("a board is created")
 def test_check_board():
-    driver.find_element(By.CLASS_NAME, 'board-header-btn').is_displayed()
-    driver.find_element(By.CLASS_NAME, 'board-header-btn-text').text = 'testBoard'
+    driver.find_element(By.CLASS_NAME, 'board-header-btn-text').is_displayed()
+    board_name = driver.find_element(By.CLASS_NAME, 'board-header-btn-text').get_attribute("textContent")
+    if board_name == 'testBoard':
+        print('tests are passed!')
