@@ -14,17 +14,16 @@ Feature: Lists Creation
 
 
   Scenario: User can display a list
-    Given the api endpoint is set
-    When the request HEADER is set\
-    And GET HTTP request is sent
-    Then the response <statusCode> is 200
+    Given there is a list on the board
+    When GET HTTP request is sent
+    Then the response is 200
 
 
   Scenario: User cannot create lists without a title
-    Given user is on a board
-    When user creates a list
-    And user leaves the title empty
-    Then the list is not created
+    Given there is a board
+    When user creates a list without title
+    Then the response is 400
+
   @api
   Scenario: User can change the list title
     Given a user is on a board with a list

@@ -1,6 +1,5 @@
 from pytest_bdd import given, when, then
 import requests
-import json
 import datetime
 import pytest
 
@@ -74,4 +73,5 @@ def test_create_list():
 def test_check_created_list():
     print(pytest.response.text)
     assert pytest.response.status_code == 200
+
 
