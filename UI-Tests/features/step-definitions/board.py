@@ -41,3 +41,4 @@ def test_check_board():
     board_name = driver.find_element(By.CLASS_NAME, 'board-name-input').get_attribute("aria-label")
     if board_name == 'testBoard':
         print('tests are passed!')
+
