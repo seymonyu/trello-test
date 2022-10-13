@@ -35,9 +35,8 @@ Feature: Card
     Then the card is displayed
 
   Scenario: User can delete a card
-    Given user is opened a card
-    When the user clicks 'Archive card' button
-    And the user clicked 'Delete' button
+    Given has a card in a board
+    When deletes the card
     Then the card is deleted
 
   Scenario: User can archive a card

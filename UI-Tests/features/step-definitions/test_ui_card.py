@@ -91,6 +91,3 @@ def step_impl():
     raise NotImplementedError(u'STEP: And the user clicked \'Delete\' button')
 
 
-@then("the card is deleted")
-def step_impl():
-    raise NotImplementedError(u'STEP: Then the card is deleted')
