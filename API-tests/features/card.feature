@@ -38,3 +38,5 @@ Feature: Card
     Given has a card in a board
     When deletes the card
     Then the card is deleted
+
+
