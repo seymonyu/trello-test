@@ -12,11 +12,17 @@ headers = {
 }
 
 query = {
-   'key': 'APIKey',
-   'token': 'APIToken'
+   'key': key,
+   'token': token
 }
 query_list = {
-        'idBoard': config.board_id,
-        'key': config.key,
-        'token': config.token
+        'idBoard': "63446a765b4e5c00f5a24376",
+        'key': key,
+        'token': token
     }
+
+print(key)
+print(token)
+print(board_id)
+print(list_id)
+print(user_id)

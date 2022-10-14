@@ -5,7 +5,6 @@ import pytest
 import config
 
 
-
 @pytest.fixture
 def step_context():
     return {'response': None}
@@ -33,7 +32,7 @@ def test_check_board():
     assert response.status_code == 200
     board_id = ""
     if response:
-        board_id = response.json()[12]["id"]
+        board_id = response.json()[2]["id"]
         print(board_id)
         return board_id
     else:

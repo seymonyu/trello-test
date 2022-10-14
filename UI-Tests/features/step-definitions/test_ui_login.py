@@ -1,5 +1,4 @@
 import os
-
 from pytest_bdd import given, when, then
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -7,11 +6,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 
 
-email = os.environ('TRELLO_EMAIL')
-password = os.environ('TRELLO_PASSWORD')
+email = os.environ.get('TRELLO_EMAIL')
+password = os.environ.get('TRELLO_PASSWORD')
 url = "https://trello.com/"
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-driver.implicitly_wait(20)
+driver.implicitly_wait(30)
 
 
 @given("A user is on the trello website")

@@ -13,7 +13,7 @@ def step_context():
 def test_check_board():
     response = requests.request(
         "GET",
-        url=f'{config.url}1/members/{config.user_id}/boards/{config.board_id}',
+        url=f'{config.url}1/members/{config.user_id}/boards',
         headers=config.headers,
         params=config.query
     )
