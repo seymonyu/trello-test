@@ -37,8 +37,9 @@ def test_enter_board_name():
 
 @then("a board is created")
 def test_check_board():
-    driver.find_element(By.CLASS_NAME, 'board-name-input').is_displayed()
-    board_name = driver.find_element(By.CLASS_NAME, 'board-name-input').get_attribute("aria-label")
+    driver.implicitly_wait(20)
+    driver.find_element(By.CLASS_NAME, 'board-header-btn').is_displayed()
+    board_name = driver.find_element(By.CLASS_NAME, 'board-name-input').get_attribute("value")
     if board_name == 'testBoard':
         print('tests are passed!')
 

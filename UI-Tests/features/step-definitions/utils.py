@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 
 
 def login(driver, email, password):
+    driver.implicitly_wait(20)
     driver.find_element(By.PARTIAL_LINK_TEXT, 'Log in').click()
     driver.find_element(By.ID, 'user').send_keys(email)
     driver.find_element(By.ID, 'login').click()
